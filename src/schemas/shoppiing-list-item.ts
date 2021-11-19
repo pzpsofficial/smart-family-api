@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-const ShoppingItemListSchema = new Schema({
+const ShoppingListItemSchema = new Schema({
   productName: {
     type: String,
     required: true,
@@ -27,4 +27,4 @@ const ShoppingItemListSchema = new Schema({
   },
 });
 
-export default ShoppingItemListSchema;
+export default ShoppingListItemSchema;
