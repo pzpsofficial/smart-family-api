@@ -29,7 +29,12 @@ export const familyJoin = async (req: Request, res: Response): Promise<void> => 
     }
 
     await Family.updateOne({ name: familyToJoin.name }, { $push: { members: userId } });
-    res.send({ successNum: 1 });
+    res.send({
+      successNum: 1,
+      data: {
+        familyToJoin,
+      },
+    });
   } catch (error) {
     res.send({ errorNum: 1 });
   }

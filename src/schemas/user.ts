@@ -27,16 +27,6 @@ const UserSchema = new Schema({
     required: false,
   },
 
-  expenses: {
-    type: [String],
-    default: [],
-  },
-
-  deposits: {
-    type: [String],
-    default: [],
-  },
-
   password: {
     type: String,
     required: true,

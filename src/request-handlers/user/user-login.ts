@@ -24,7 +24,15 @@ export const UserLogin = async (req: Request, res: Response): Promise<void> => {
     }
 
     const token = jwt.sign({ data: user }, process.env.JWT_SECRET_KEY as string, { expiresIn: '1d' });
-    res.send(token);
+    res.send({
+      data: {
+        token,
+        fullName: user.virtual.fullName,
+        email: user.fullName,
+        role: user.role,
+        birthday: user.birthday,
+      },
+    });
   } catch (error) {
     res.send({ errorNum: 1 });
   }

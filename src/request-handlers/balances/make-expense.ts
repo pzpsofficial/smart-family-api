@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { Expense } from '../../models/expense';
 import { Family } from '../../models/family';
 
 export const makeExpense = async (req: Request, res: Response) => {
@@ -22,9 +23,17 @@ export const makeExpense = async (req: Request, res: Response) => {
       return;
     }
 
-    familyToUpdate.balance -= value;
-    await familyToUpdate.save();
-    res.send({ successNum: 1 });
+    const newExpense = await new Expense({ ...req.body }).save();
+
+    await Family.updateOne({ name: family }, { $push: { expenses: newExpense._id }, $inc: { balance: -value } });
+    const familyToSend = await Family.findOne({ name: family });
+
+    res.send({
+      successNum: 1,
+      data: {
+        newBalance: familyToSend.balance,
+      },
+    });
   } catch (error) {
     res.send({ errorNum: 1 });
   }
