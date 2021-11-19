@@ -1,0 +1,43 @@
+{
+  "name": "smart-family-api",
+  "version": "1.0.0",
+  "description": "Coding Night 2021 - Team Null",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc -p .",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "startdb": "C:/users/bartek/mongodb/bin/mongod.exe --dbpath C:/users/bartek/mongodb-data"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pzpsofficial/smart-family-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pzpsofficial/smart-family-api/issues"
+  },
+  "homepage": "https://github.com/pzpsofficial/smart-family-api#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.9",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
