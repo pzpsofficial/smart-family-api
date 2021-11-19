@@ -6,6 +6,11 @@ const FamilySchema = new Schema({
     requried: true,
   },
 
+  password: {
+    type: String,
+    required: true,
+  },
+
   members: {
     type: [String],
     default: [],
@@ -37,7 +42,7 @@ const FamilySchema = new Schema({
   },
 
   shoppingList: {
-    type: String,
+    type: [String],
     default: [],
   },
 

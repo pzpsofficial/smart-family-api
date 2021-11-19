@@ -6,6 +6,7 @@ import connectToDb from './helpers/db-connection';
 
 // Routers
 import UserRouter from './routes/user-routes';
+import FamilyRouter from './routes/family-routes';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(json());
 app.use(cors());
 
 app.use('/user', UserRouter);
+app.use('/family', FamilyRouter);
 
 app.listen(port, () => {
   return console.log('Server up and running');
