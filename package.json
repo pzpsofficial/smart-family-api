@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/pzpsofficial/smart-family-api#readme",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
@@ -38,7 +39,13 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/validator": "^13.7.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.16.4",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "validator": "^13.7.0"
   }
 }
