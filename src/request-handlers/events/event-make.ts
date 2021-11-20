@@ -12,7 +12,7 @@ export const eventMake = async (req: Request, res: Response): Promise<void> => {
     }
 
     const familyToAddEvent = await Family.findOne({ name: family });
-    const newEvent = await new Event({ ...req.body, members: [userId] });
+    const newEvent = await new Event({ ...req.body, members: [userId] }).save();
     familyToAddEvent.events.push(newEvent._id);
     await familyToAddEvent.save();
     res.send({

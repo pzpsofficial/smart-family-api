@@ -15,6 +15,15 @@ const EventSchema = new Schema({
     type: [String],
     default: [],
   },
+
+  expireAt: {
+    type: Date,
+  },
+});
+
+EventSchema.pre('save', function (next) {
+  this.expiresAt = this.date;
+  next();
 });
 
 export default EventSchema;
