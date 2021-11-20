@@ -7,7 +7,7 @@ export const userRegister = async (req: Request, res: Response): Promise<void> =
   try {
     const { firstName, lastName, email, role, birthday, password, confirmPassword } = req.body;
 
-    if (!firstName || !lastName || !email || !role || !birthday || !password || !confirmPassword) {
+    if (!firstName || !lastName || !email || !role || !password || !confirmPassword) {
       res.send({ errorNum: 2 });
       return;
     }
