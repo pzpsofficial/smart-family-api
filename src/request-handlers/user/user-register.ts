@@ -9,20 +9,24 @@ export const userRegister = async (req: Request, res: Response): Promise<void> =
 
     if (!firstName || !lastName || !email || !role || !birthday || !password || !confirmPassword) {
       res.send({ errorNum: 2 });
+      return;
     }
 
     if (password !== confirmPassword) {
       res.send({ errorNum: 3 });
+      return;
     }
 
     const userWithSameEmail = await User.findOne({ email });
 
     if (userWithSameEmail) {
       res.send({ errorNum: 4 });
+      return;
     }
 
     if (!isStrongPassword(password)) {
       res.send({ errorNum: 5 });
+      return;
     }
 
     const hashedPassword = await hash(password, 10);
@@ -31,6 +35,7 @@ export const userRegister = async (req: Request, res: Response): Promise<void> =
 
     if (!newUser) {
       res.send({ errorNum: 6 });
+      return;
     }
 
     res.send({ successNum: 1 });
