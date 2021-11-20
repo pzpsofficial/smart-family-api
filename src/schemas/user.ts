@@ -14,7 +14,7 @@ const UserSchema = new Schema({
   role: {
     type: String,
     required: true,
-    enum: ['parent', 'child', 'uncle', 'aunt', 'grandphater', 'grandmother', 'cousin'],
+    enum: ['mama', 'tata', 'syn', 'córka'],
   },
 
   email: {

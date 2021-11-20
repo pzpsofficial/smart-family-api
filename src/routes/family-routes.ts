@@ -6,7 +6,7 @@ import { familyJoin } from '../request-handlers/family/family-join';
 
 const FamilyRouter = Router();
 
-FamilyRouter.get('/get-balance-info/:family', (req: Request, res: Response) => familyGetBalanceInfo(req, res));
+FamilyRouter.get('/get-balance-info/:family', auth, (req: Request, res: Response) => familyGetBalanceInfo(req, res));
 
 FamilyRouter.post('/create', auth, (req: Request, res: Response) => familyCreate(req, res));
 FamilyRouter.post('/join', auth, (req: Request, res: Response) => familyJoin(req, res));
